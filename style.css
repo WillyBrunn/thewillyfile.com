@@ -7,8 +7,8 @@
   font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, sfhello, Helvetica, Arial, san-serif;
   word-spacing: 0px;
   overflow: overlay;
-  background: linear-gradient(80deg, var(--theme-color) 21px, transparent 1%) center, linear-gradient(var(--theme-color) 21px, transparent 1%) center, var(--text-color);
-  background-size: 22px 22px;
+  background: linear-gradient(80deg, var(--theme-color) 1.3rem, transparent 1%) center, linear-gradient(var(--theme-color) 1.3rem, transparent 1%) center, var(--text-color);
+  background-size: 1.4rem 1.4rem;
   background-attachment: fixed;
 }
 @media (prefers-color-scheme: light) {
@@ -79,7 +79,7 @@ body {
 
   ul {
     display: grid;
-    grid-template-columns: repeat(2, auto) 1fr;
+    grid-template-columns: repeat(3, auto) 1fr;
     column-gap: 2rem;
     padding: 0;
     margin: 0;

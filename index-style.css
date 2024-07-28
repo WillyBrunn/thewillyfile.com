@@ -83,22 +83,11 @@ main {
 }
 
 /*screen sizes-------------------------------------------------------*/
-@media only screen and (max-width: 81rem) {
+@media only screen and (max-width: 81rem) and (min-width: 50rem){
   main {
     grid-template-columns: 9rem 1fr;
     grid-template-rows: auto;
     gap: 1rem;
-  
-    div {
-      /* margin: 1rem; */
-      padding: 1rem;
-      background-color: hsl(from var(--box-color) h s l / 70%);
-      border-radius: 1rem;
-  
-      p {
-        padding-left: 1rem;
-      }
-    }
   }
   .Timeline {
     grid-column: 1;
@@ -136,3 +125,48 @@ main {
   }
 }
 
+/*screen sizes-------------------------------------------------------*/
+@media only screen and (max-width: 50rem) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  .Timeline {
+    display: none;
+  
+  }
+  .Skills {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .Me {
+    grid-row: 1;
+    grid-column: 1;
+
+  }
+  
+  .timeline-apple {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .Apple {
+    grid-row: 4;
+    grid-column: 1;
+  }
+  .timeline-stubentigercafe {
+    grid-row: 5;
+    grid-column: 1;
+  }
+  .Stubentigercafe {
+    grid-row: 6;
+    grid-column: 1;
+  }
+  .timeline-hospitality {
+    grid-row: 7;
+    grid-column: 1;
+  }
+  .Hospitality {
+    grid-row: 8;
+    grid-column: 1;
+  }
+}
