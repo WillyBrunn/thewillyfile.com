@@ -1,0 +1,33 @@
+main {
+    margin: auto 5% auto 5%;
+    padding: 0;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+    row-gap: 1rem;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 100%;
+  
+    div {
+      /* margin: 1rem; */
+      padding: 1rem;
+      background-color: hsl(from var(--box-color) h s l / 70%);
+      border-radius: 1rem;
+    }
+  }
+
+.content {
+    text-align: center;
+}
+/* main {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 100%;
+} */
+
+.gif-dwight {
+    width: 80%;
+    margin: 0% 10% 0% 10%;
+}

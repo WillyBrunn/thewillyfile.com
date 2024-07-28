@@ -1,0 +1,216 @@
+/* Pre and queries ------------------------------------------------- */
+:root {
+  max-width: 100dvw;
+  margin: 0;  
+  padding: 0;
+  color: var(--text-color);
+  font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, sfhello, Helvetica, Arial, san-serif;
+  word-spacing: 0px;
+  overflow: overlay;
+  background: linear-gradient(80deg, var(--theme-color) 21px, transparent 1%) center, linear-gradient(var(--theme-color) 21px, transparent 1%) center, var(--text-color);
+  background-size: 22px 22px;
+  background-attachment: fixed;
+}
+@media (prefers-color-scheme: light) {
+  html {
+      --box-color: hsl(from var(--theme-color) h s calc(l - 5));
+      --hover-color: hsl(from var(--theme-color) h s calc(l - 20));
+      --theme-color: #fbfaf8;
+      --text-color: #242222;
+      --special-color: #0000bf;
+  }
+  main {
+    div {
+      background-blend-mode: lighten;
+    }
+  }
+  .github-mark-white {
+    display: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  html {
+      --box-color: hsl(from var(--theme-color) h s calc(l - 5));
+      --hover-color: hsl(from var(--theme-color) h s calc(l - 2));
+      --theme-color: #242222;
+      --text-color: #fbfaf8;
+      --special-color: #0000bf;
+  } 
+  main {
+    div {
+      background-blend-mode: darken;
+    }
+  }
+  .github-mark-dark {
+    display: none;
+  }
+}
+
+/* Body ------------------------------------------------- */
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.body-wrapper {
+  /* width: 100dvw; */
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: 5rem 1fr auto;
+  grid-template-columns: auto;
+  row-gap: 1rem;
+}
+
+/* navbar ------------------------------------------------- */
+
+.navbar {
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  grid-column: 1;
+  margin: 0px 0px auto 0px;
+  padding: 0 5%;
+  background-color: var(--box-color);
+  width: 90%;
+  border-bottom: .1rem solid var(--special-color);
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, auto) 1fr;
+    column-gap: 2rem;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 2rem;
+      line-height: 1;
+      width: fit-content;
+      color: var(--text-color);
+      list-style: none;
+      text-decoration: none;
+      margin: auto;
+
+    }
+  }
+  
+
+}
+.navbar-icon-img {
+  width: 5rem;
+  vertical-align: middle;
+  
+}
+.navbar-text {
+  padding: .5rem;
+}
+.navbar-text:hover {
+  background-color: var(--hover-color);
+  padding: .5rem;
+  border-radius: 1rem;
+}
+
+/* footer ------------------------------------------------- */
+footer {
+  height: 5rem;
+  display: grid;
+  grid-template-columns: 12rem 1fr 12rem;
+  grid-row: 3;
+  background-color: var(--box-color);
+  padding: 1rem;
+}
+
+.footer-center {
+  text-align: center;
+  height: auto;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-column: 2;
+}
+.footer-contact {
+  h3 {
+    margin: 0;
+  }
+  p {
+    text-indent: 0;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: 3;
+    padding: 0;
+
+    li {
+      width: 3rem;
+      color: var(--text-color);
+      list-style: none;
+      text-decoration: none;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+
+      img {
+        height: 2rem;
+
+      }
+    }
+  }
+}
+
+/*text styles-------------------------------------------------------*/
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  /* text-indent: 1rem; */
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+hr {
+  border: transparent;
+  height: 1rem;
+}
+
+/*screen sizes-------------------------------------------------------*/
+@media only screen and (max-width: 50rem) {
+  footer {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+  .footer-center {
+    grid-column: 1;
+  }
+  .footer-contact {
+
+    h3 {
+      text-align: center;
+    }
+    
+    ul {
+      grid-column: 1;
+  
+      /* li {
+  
+        img {
+  
+        }
+      } */
+    }
+  }
+}

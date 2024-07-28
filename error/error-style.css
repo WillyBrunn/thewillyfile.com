@@ -1,0 +1,15 @@
+main {
+    grid-row-start: 1;
+    grid-row-start: 2;
+    height: 100%;
+
+    div{
+        text-align: center;
+        
+        img {
+        height: 5rem;
+        vertical-align: middle;
+        }
+
+    }
+}
