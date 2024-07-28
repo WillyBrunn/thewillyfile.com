@@ -148,6 +148,10 @@ main {
   .timeline-apple {
     grid-row: 3;
     grid-column: 1;
+    margin: 0;
+    padding: 1rem;
+    background-color: hsl(from var(--box-color) h s l / 70%);
+    border-radius: 1rem;
   }
   .Apple {
     grid-row: 4;
@@ -156,6 +160,10 @@ main {
   .timeline-stubentigercafe {
     grid-row: 5;
     grid-column: 1;
+    margin: 0;
+    padding: 1rem;
+    background-color: hsl(from var(--box-color) h s l / 70%);
+    border-radius: 1rem;
   }
   .Stubentigercafe {
     grid-row: 6;
@@ -164,6 +172,10 @@ main {
   .timeline-hospitality {
     grid-row: 7;
     grid-column: 1;
+    margin: 0;
+    padding: 1rem;
+    background-color: hsl(from var(--box-color) h s l / 70%);
+    border-radius: 1rem;
   }
   .Hospitality {
     grid-row: 8;
