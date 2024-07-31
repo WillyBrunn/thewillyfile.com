@@ -31,6 +31,12 @@ main {
     padding: .5rem;
     border-radius: 1rem;
 }
+.hover-effect {
+    background-color: var(--hover-color);
+    padding: .5rem;
+    border-radius: 1rem;
+
+}
 
 .content {
     display: none;
@@ -52,7 +58,7 @@ main {
         background-color: transparent;
         min-width: 25rem;
         flex: 1 1 30%;
-        filter: drop-shadow(var(--hover-color) .5rem .5rem .5rem);
+        filter: drop-shadow(#242222 .5rem .5rem .5rem);
         z-index: 0;
 
         img {
@@ -83,7 +89,6 @@ main {
 } */
 
 .Pride {
-    
     .collapsible-button:hover {
         background-color: hsl(from var(--hover-color) h s l / 50%);
         padding: .5rem;
