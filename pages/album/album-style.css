@@ -8,7 +8,7 @@ main {
     grid-row-start: 2;
     grid-row-end: 3;
     height: 100%;
-    grid-template-rows: repeat(2, auto) 1fr; 
+    grid-template-rows: repeat(4, auto) 1fr; 
   
     div {
       margin: 0;
