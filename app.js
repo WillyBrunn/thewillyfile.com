@@ -1,3 +1,5 @@
+/* album page collapsibles: ------------------------------------------------- */
+
 var coll = document.getElementsByClassName("collapsible-button");
 var i;
 
@@ -7,11 +9,19 @@ coll[i].addEventListener("click", function() {
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
     content.style.display = "none";
+    this.classList.remove("hover-effect")
+    this.parentNode.style.background = "";
     } else {
     content.style.display = "block";
+      if (this.parentNode.classList.contains("Pride")) {
+        this.parentNode.style.background = "var(--pride-color)";
+      }
+    this.classList.add("hover-effect");
     }
 });
 }
+
+/* small screen menu button: ------------------------------------------------- */
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */

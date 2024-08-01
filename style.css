@@ -4,13 +4,17 @@
   margin: 0;  
   padding: 0;
   color: var(--text-color);
+  accent-color: var(--special-color);
   font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, sfhello, Helvetica, Arial, san-serif;
-  word-spacing: 0px;
+  word-spacing: 0;
   overflow: overlay;
-  background: linear-gradient(80deg, var(--theme-color) 21px, transparent 1%) center, linear-gradient(var(--theme-color) 21px, transparent 1%) center, var(--text-color);
-  background-size: 22px 22px;
+  background: radial-gradient(var(--theme-color) 97%,var(--text-color) 3%);
+  background-size: 2.1rem 2.1rem;
   background-attachment: fixed;
+  --pan-pride-color: linear-gradient(to right, rgb(255, 30, 140) 10%, rgb(255, 102, 57), rgb(255, 230, 29) 40%, rgb(255, 230, 29), rgb(255, 230, 29) 60%, rgb(87, 229, 98), rgb(31, 179, 253) 85%, rgb(31, 179, 253), rgb(31, 179, 253));
+  --pride-color: linear-gradient(135deg, rgb(0, 0, 0), rgb(54, 35, 18), rgb(120, 79, 23), rgb(181, 63, 27), rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 48%, rgb(241, 235, 27), rgb(241, 235, 27) 52%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
 }
+
 @media (prefers-color-scheme: light) {
   html {
       --box-color: hsl(from var(--theme-color) h s calc(l - 5));
@@ -47,15 +51,12 @@
 }
 
 /* Body ------------------------------------------------- */
-
 body {
   margin: 0;
   padding: 0;
   width: 100%;
 }
-
 .body-wrapper {
-  /* width: 100dvw; */
   min-height: 100dvh;
   display: grid;
   grid-template-rows: 5rem 1fr auto;
@@ -64,7 +65,6 @@ body {
 }
 
 /* navbar ------------------------------------------------- */
-
 .navbar {
   position: fixed;
   right: 0px;
@@ -76,10 +76,11 @@ body {
   background-color: var(--box-color);
   width: 90%;
   border-bottom: .1rem solid var(--special-color);
+  z-index: 1;
 
   ul {
     display: grid;
-    grid-template-columns: repeat(2, auto) 1fr;
+    grid-template-columns: repeat(3, auto) 1fr;
     column-gap: 2rem;
     padding: 0;
     margin: 0;
@@ -95,8 +96,6 @@ body {
 
     }
   }
-  
-
 }
 .navbar-icon-img {
   width: 5rem;
@@ -120,41 +119,47 @@ footer {
   grid-row: 3;
   background-color: var(--box-color);
   padding: 1rem;
+  margin: 0;
+  border-top: .1rem solid var(--special-color);
+  grid-template-rows: repeat(2, auto);
+  height: auto;
+  gap: .5rem;
+
+  p {
+    text-align: center;
+    margin: auto;
+  }
 }
 
 .footer-center {
-  text-align: center;
-  height: auto;
-  display: grid;
-  grid-template-rows: repeat(2, auto);
   grid-column: 2;
 }
 .footer-contact {
-  h3 {
-    margin: 0;
-  }
-  p {
-    text-indent: 0;
-  }
-  ul {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column: 3;
-    padding: 0;
+  margin: 0;
+  grid-row: 1;
+  grid-column: 3;
+  margin: 0;
+}
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: 3;
+  padding: 0;
+  grid-row: 2;
+  margin: 0;
 
-    li {
-      width: 3rem;
-      color: var(--text-color);
-      list-style: none;
-      text-decoration: none;
-      margin: auto;
-      display: flex;
-      justify-content: center;
+  li {
+    width: 3rem;
+    color: var(--text-color);
+    list-style: none;
+    text-decoration: none;
+    margin: auto;
+    display: flex;
+    justify-content: center;
 
-      img {
-        height: 2rem;
+    img {
+      height: 2rem;
 
-      }
     }
   }
 }
@@ -175,6 +180,7 @@ h3 {
 p {
   font-size: 1rem;
   /* text-indent: 1rem; */
+  text-wrap: pretty;
 }
 
 a {
@@ -192,25 +198,18 @@ hr {
   footer {
     height: auto;
     grid-template-columns: 1fr;
+    padding: .5rem;
   }
   .footer-center {
     grid-column: 1;
   }
   .footer-contact {
-
-    h3 {
       text-align: center;
-    }
-    
-    ul {
       grid-column: 1;
-  
-      /* li {
-  
-        img {
-  
-        }
-      } */
-    }
+      grid-row: 3;
+  }
+  .contact-list {
+      grid-column: 1;
+      grid-row: 4;
   }
 }
