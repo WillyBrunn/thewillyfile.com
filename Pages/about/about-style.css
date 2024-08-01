@@ -11,7 +11,6 @@ main {
     height: 100%;
   
     div {
-      /* margin: 1rem; */
       padding: 1rem;
       background-color: hsl(from var(--box-color) h s l / 70%);
       border-radius: 1rem;
@@ -21,11 +20,6 @@ main {
 .content {
     text-align: center;
 }
-/* main {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    height: 100%;
-} */
 
 .gif-dwight {
     width: 80%;
