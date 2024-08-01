@@ -31,7 +31,7 @@ main {
 }
 
 .Me {
-  background-image: url(../../Images/me2.png);
+  background-image: url(../../Images/me2.webp);
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: 100%;
@@ -45,7 +45,7 @@ main {
   text-align: center;
 }
 .Apple {
-  background-image: url(./Images/IMG_0917.jpeg);
+  background-image: url(./Images/IMG_0917.webp);
   background-size: cover;
   background-position-y: 30%;
   background-color: hsl(from var(--box-color) h s l / 80%);
@@ -58,7 +58,7 @@ main {
   text-align: center;
 }
 .Stubentigercafe {
-  background-image: url(./Images/IMG_2868.JPG);
+  background-image: url(./Images/IMG_2868.webp);
   background-size: cover;
   background-position-y: 20%;
   background-color: hsl(from var(--box-color) h s l / 80%);
@@ -71,7 +71,7 @@ main {
   text-align: center;
 }
 .Hospitality {
-  background-image: url(./Images/2023-09-18.jpg);
+  background-image: url(./Images/2023-09-18.webp);
   background-size: cover;
   background-position-y: 60%;
   background-color: hsl(from var(--box-color) h s l / 80%);
@@ -93,7 +93,7 @@ main {
   
   }
   .Skills {
-    background-image: url(./Images/SCR-20240727-tdec.png);
+    background-image: url(./Images/SCR-20240727-tdec.webp);
     background-size: cover;
     background-position-x: 20%;
     grid-column: 2;
@@ -135,7 +135,7 @@ main {
   
   }
   .Skills {
-    background-image: url(./Images/SCR-20240727-tdec.png);
+    background-image: url(./Images/SCR-20240727-tdec.webp);
     background-size: cover;
     background-position-x: 20%;
     grid-column: 1;
