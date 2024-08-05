@@ -71,7 +71,6 @@ main {
   text-align: center;
 }
 .Hospitality {
-  background-image: url(./Images/2023-09-18.webp);
   background-size: cover;
   background-position-y: 60%;
   background-color: hsl(from var(--box-color) h s l / 80%);
