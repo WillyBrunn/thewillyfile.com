@@ -11,24 +11,27 @@
   background: radial-gradient(var(--theme-color) 97%,var(--text-color) 3%);
   background-size: 2.1rem 2.1rem;
   background-attachment: fixed;
+  background-position: 1.05rem;
   /* credit to https://github.com/cesque/gaydient */
     --pan-pride-color: linear-gradient(to right, rgb(255, 30, 140) 10%, rgb(255, 102, 57), rgb(255, 230, 29) 40%, rgb(255, 230, 29), rgb(255, 230, 29) 60%, rgb(87, 229, 98), rgb(31, 179, 253) 85%, rgb(31, 179, 253), rgb(31, 179, 253));
     --pride-color: linear-gradient(135deg, rgb(0, 0, 0), rgb(54, 35, 18), rgb(120, 79, 23), rgb(181, 63, 27), rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 48%, rgb(241, 235, 27), rgb(241, 235, 27) 52%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
   /* ------------------------------------------------- */
+  --test-pride-color: linear-gradient(135deg, rgb(181, 63, 27), rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27), rgb(241, 235, 27), rgb(241, 235, 27), rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142) 50%, #C994C7, rgb(255, 230, 230), rgb(246, 216, 221), rgb(247, 168, 184), rgb(179, 157, 233), rgb(85, 205, 252), rgb(120, 79, 23), rgb(54, 35, 18), rgb(0, 0, 0));
+  --apple-pride-color: linear-gradient(135deg, rgb(197, 39, 36) 10%, rgb(229, 136, 73), rgb(243, 208, 49), rgb(129, 208, 167), rgb(67, 112, 195) 60%, rgb(70, 21, 101), rgb(242, 242, 242), rgb(237, 195, 207), rgb(166, 196, 246), rgb(105, 63, 50), rgb(49, 39, 42) 97%);
+  --special-color: rgb(89, 76, 142);
 } 
 
 @media (prefers-color-scheme: light) {
   html {
-      --box-color: hsl(from var(--theme-color) h s calc(l - 5));
-      --hover-color: hsl(from var(--theme-color) h s calc(l - 20));
-      --theme-color: #fbfaf8;
-      --text-color: #242222;
-      --special-color: #0000bf;
+    --box-color: #E7E5EB;/* hsl(from var(--theme-color) h s calc(l - 5)) */
+    --hover-color: #dad7e0; /* hsl(from var(--theme-color) h s calc(l - 20)) */
+    --div-background-70: rgba(241, 240, 242, 0.7);
+    --div-background-80: rgba(241, 240, 242, 0.8);
+    --theme-color: #fbfaf8;
+    --text-color: #242222;
   }
-  main {
-    div {
-      background-blend-mode: lighten;
-    }
+  main div {
+    background-blend-mode: lighten;
   }
   .github-mark-white {
     display: none;
@@ -36,16 +39,15 @@
 }
 @media (prefers-color-scheme: dark) {
   html {
-      --box-color: hsl(from var(--theme-color) h s calc(l - 5));
-      --hover-color: hsl(from var(--theme-color) h s calc(l - 2));
-      --theme-color: #242222;
-      --text-color: #fbfaf8;
-      --special-color: #0000bf;
+    --box-color: #181616;    /* hsl(from var(--theme-color) h s calc(l - 5)) */
+    --hover-color: #201e1e;    /* hsl(from var(--theme-color) h s calc(l - 2)) */
+    --div-background-70: rgba(24, 22, 22, 0.7);
+    --div-background-80: rgba(24, 22, 22, 0.8);
+    --theme-color: #242222;
+    --text-color: #fbfaf8;
   } 
-  main {
-    div {
-      background-blend-mode: darken;
-    }
+  main div {
+    background-blend-mode: darken;
   }
   .github-mark-dark {
     display: none;
@@ -78,26 +80,23 @@ body {
   background-color: var(--box-color);
   width: 90%;
   border-bottom: .1rem solid var(--special-color);
-  z-index: 1;
-
-  ul {
-    display: grid;
-    grid-template-columns: repeat(3, auto) 1fr;
-    column-gap: 2rem;
-    padding: 0;
-    margin: 0;
-
-    li {
-      font-size: 2rem;
-      line-height: 1;
-      width: fit-content;
-      color: var(--text-color);
-      list-style: none;
-      text-decoration: none;
-      margin: auto;
-
-    }
-  }
+  z-index: 10;
+}
+.navbar ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto) 1fr;
+  column-gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+.navbar ul li {
+  font-size: 2rem;
+  line-height: 1;
+  width: fit-content;
+  color: var(--text-color);
+  list-style: none;
+  text-decoration: none;
+  margin: auto;
 }
 .navbar-icon-img {
   width: 5rem;
@@ -126,11 +125,10 @@ footer {
   grid-template-rows: repeat(2, auto);
   height: auto;
   gap: .5rem;
-
-  p {
-    text-align: center;
-    margin: auto;
-  }
+}
+footer p {
+  text-align: center;
+  margin: auto;
 }
 
 .footer-center {
@@ -149,21 +147,19 @@ footer {
   padding: 0;
   grid-row: 2;
   margin: 0;
+}
+.contact-list li {
+  width: 3rem;
+  color: var(--text-color);
+  list-style: none;
+  text-decoration: none;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.contact-list li img {
+  height: 2rem;
 
-  li {
-    width: 3rem;
-    color: var(--text-color);
-    list-style: none;
-    text-decoration: none;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-
-    img {
-      height: 2rem;
-
-    }
-  }
 }
 
 /*text styles-------------------------------------------------------*/
@@ -206,12 +202,12 @@ hr {
     grid-column: 1;
   }
   .footer-contact {
-      text-align: center;
-      grid-column: 1;
-      grid-row: 3;
+    text-align: center;
+    grid-column: 1;
+    grid-row: 3;
   }
   .contact-list {
-      grid-column: 1;
-      grid-row: 4;
+    grid-column: 1;
+    grid-row: 4;
   }
 }
