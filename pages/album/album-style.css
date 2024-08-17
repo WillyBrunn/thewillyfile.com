@@ -9,15 +9,14 @@ main {
     grid-row-end: 3;
     height: 100%;
     grid-template-rows: repeat(4, auto) 1fr; 
-  
-    div {
-      margin: 0;
-      padding: 3rem;
-      background-color: hsl(from var(--box-color) h s l / 70%);
-      border-radius: 1rem;
-      height: fit-content;
-      backdrop-filter: blur(1px);
-    }
+}  
+main div {
+    margin: 0;
+    padding: 3rem;
+    background-color: var(--div-background-70);
+    border-radius: 1rem;
+    height: fit-content;
+    backdrop-filter: blur(1px);
 }
 
 .collapsible-button {
@@ -30,14 +29,14 @@ main {
 .collapsible-button:hover {
     padding: .5rem;
     border-radius: 1rem;
-    backdrop-filter: brightness(80%);
+    background-color: var(--hover-color);
     cursor: pointer;
     cursor: hand;
 }
 .hover-effect {
     padding: .5rem;
     border-radius: 1rem;
-    backdrop-filter: brightness(80%);
+    background-color: var(--hover-color);
 
 }
 
@@ -63,41 +62,34 @@ main {
     background-color: transparent;
     padding: 1rem;
     backdrop-filter: none;
-
-    div {
-        padding: 0;
-        background-color: transparent;
-        min-width: 25rem;
-        flex: 1 1 30%;
-        filter: drop-shadow(#242222 .5rem .5rem .5rem);
-        z-index: 0;
-        backdrop-filter: none;
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    }
+}
+.photocontainer div {
+    padding: 0;
+    background-color: transparent;
+    min-width: 25rem;
+    flex: 1 1 30%;
+    filter: drop-shadow(#242222 .5rem .5rem .5rem);
+    z-index: 0;
+    backdrop-filter: none;
+}
+.photocontainer div img {
+    max-width: 100%;
+    height: auto;
 }
 
 @media only screen and (max-width: 60em){
 
-    main {
-        div {
-            padding: 1rem;
-        }
+    main div {
+        padding: 1rem;
     }
-     .photocontainer {
+    .photocontainer {
         padding-top: 1rem;
-    
-        div {
-            min-width: 10rem;
-            
-    
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
+    }
+    .photocontainer div {
+        min-width: 10rem;
+    }
+    .photocontainer div img {
+        width: 100%;
+        height: auto;
     }
 }

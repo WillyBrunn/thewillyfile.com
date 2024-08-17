@@ -26,18 +26,16 @@ main {
     [timeline-end skills-end raste-end timeline-raste-end]
     ;
   gap: 1rem;
-
-  div {
-    padding: 1rem;
-    background-color: hsl(from var(--box-color) h s l / 70%);
-    border-radius: 1rem;
-    backdrop-filter: blur(1px);
-    /* outline: .2rem solid hsl(from var(--box-color) h s l / 100%); */
-
-    p {
-      padding-left: 1rem;
-    }
-  }
+}
+main div {
+  padding: 1rem;
+  background-color: var(--div-background-70);
+  border-radius: 1rem;
+  backdrop-filter: blur(1px);
+  /* outline: .2rem solid hsl(from var(--box-color) h s l / 100%); */
+}
+main div p {
+  padding-left: 1rem;
 }
 
 .Timeline {
@@ -45,19 +43,19 @@ main {
 }
 .Skills {
   grid-area: skills;
-
-  div {
-    background-color: transparent;
-    backdrop-filter: none;
-  }
+}
+.Skills div {
+  background-color: transparent;
+  backdrop-filter: none;
+  padding: 0;
 }
 
 .Me {
   background-image: url(../../Images/me2.webp);
+  background-origin: content-box;
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: 100%;
-  background-color: hsl(from var(--box-color) h s l / 70%);
   grid-area: me;
 }
 
@@ -65,9 +63,9 @@ main {
   grid-area: intro;
   z-index: 1;
   text-align: center;
-  h2 {
-    margin: 0;
-  }
+}
+.Intro h2 {
+  margin: 0;
 }
 
 .timeline-apple {
@@ -99,7 +97,7 @@ main {
 }
 .Apple, .Stubentigercafe, .Hospitality {
   background-size: cover;
-  background-color: hsl(from var(--box-color) h s l / 80%);
+  background-color: var(--div-background-80);
 
 }
 
@@ -116,11 +114,11 @@ main {
       "timeline-stubentiger stubentiger"
       "timeline-raste raste"
     ;
-    .Timeline {
-      grid-column: 1;
-      grid-row-start: timeline-apple-start;
-      grid-row-end: timeline-raste-end;
-    }
+  }
+  .Timeline {
+    grid-column: 1;
+    grid-row-start: timeline-apple-start;
+    grid-row-end: timeline-raste-end;
   }
   .Skills {
     background-image: url(./Images/code.webp);
@@ -130,10 +128,9 @@ main {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
     grid-auto-flow: column;
-
-    h2 {
-      grid-column-end: span 2;
-    }
+  }
+  .Skills h2 {
+    grid-column-end: span 2;
   }
 }
 
@@ -169,22 +166,10 @@ main {
     background-size: cover;
     background-position-x: 20%;
   }
-  .timeline-apple {
+  .timeline-apple, .timeline-stubentigercafe, .timeline-hospitality {
     margin: 0;
     padding: 1rem;
-    background-color: hsl(from var(--box-color) h s l / 70%);
-    border-radius: 1rem;
-  }
-  .timeline-stubentigercafe {
-    margin: 0;
-    padding: 1rem;
-    background-color: hsl(from var(--box-color) h s l / 70%);
-    border-radius: 1rem;
-  }
-  .timeline-hospitality {
-    margin: 0;
-    padding: 1rem;
-    background-color: hsl(from var(--box-color) h s l / 70%);
+    background-color: var(--div-background-70);
     border-radius: 1rem;
   }
 }
