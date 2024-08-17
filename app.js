@@ -10,12 +10,16 @@ coll[i].addEventListener("click", function() {
     if (content.style.display === "block") {
     content.style.display = "none";
     this.classList.remove("hover-effect")
+    // this.classList.remove("ireland-flag-border")
     this.parentNode.style.background = "";
     } else {
     content.style.display = "block";
       if (this.parentNode.classList.contains("Pride")) {
-        this.parentNode.style.background = "var(--pride-color)";
+        this.parentNode.style.background = "var(--test-pride-color)";
       }
+      // if (this.parentNode.classList.contains("Ireland")) {
+      //   this.classList.add("ireland-flag-border");
+      // }
     this.classList.add("hover-effect");
     }
 });

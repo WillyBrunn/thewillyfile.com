@@ -15,6 +15,7 @@ main {
       background-color: hsl(from var(--box-color) h s l / 70%);
       border-radius: 1rem;
       text-align: center;
+      backdrop-filter: blur(1px);
         
       img {
       height: 10rem;

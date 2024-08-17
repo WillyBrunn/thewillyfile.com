@@ -3,14 +3,36 @@ main {
   padding: 0;
   grid-row: 2;
   display: grid;
-  grid-template-columns: 9rem 1fr auto;
-  grid-template-rows: auto;
+  grid-template-columns:
+    [me-start intro-start timeline-start timeline-apple-start timeline-stubentiger-start timeline-raste-start]
+    7rem
+    [timeline-end timeline-apple-end timeline-stubentiger-end timeline-raste-end apple-start stubentiger-start raste-start]
+    1fr
+    [me-end intro-end apple-end stubentiger-end raste-end skills-start]
+    auto
+    [skills-end]
+    ;
+  grid-template-rows:
+    [skills-start me-start]
+    auto
+    [me-end intro-start]
+    auto
+    [intro-end timeline-start apple-start timeline-apple-start]
+    auto
+    [apple-end timeline-apple-end stubentiger-start timeline-stubentiger-start]
+    auto
+    [stubentiger-end timeline-stubentiger-end raste-start timeline-raste-start]
+    auto
+    [timeline-end skills-end raste-end timeline-raste-end]
+    ;
   gap: 1rem;
 
   div {
     padding: 1rem;
     background-color: hsl(from var(--box-color) h s l / 70%);
     border-radius: 1rem;
+    backdrop-filter: blur(1px);
+    /* outline: .2rem solid hsl(from var(--box-color) h s l / 100%); */
 
     p {
       padding-left: 1rem;
@@ -19,15 +41,15 @@ main {
 }
 
 .Timeline {
-  grid-column: 1;
-  grid-row-start: 1;
-  grid-row-end: 5;
-
+  grid-area: timeline;
 }
 .Skills {
-  grid-column: 3;
-  grid-row-start: 1;
-  grid-row-end: 5;
+  grid-area: skills;
+
+  div {
+    background-color: transparent;
+    backdrop-filter: none;
+  }
 }
 
 .Me {
@@ -36,91 +58,82 @@ main {
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-color: hsl(from var(--box-color) h s l / 70%);
-  grid-column: 2;
+  grid-area: me;
+}
+
+.Intro {
+  grid-area: intro;
+  z-index: 1;
+  text-align: center;
+  h2 {
+    margin: 0;
+  }
 }
 
 .timeline-apple {
-  grid-column: 1;
-  grid-row: 2;
-  text-align: center;
-}
-.Apple {
-  background-image: url(./Images/IMG_0917.webp);
-  background-size: cover;
-  background-position-y: 30%;
-  background-color: hsl(from var(--box-color) h s l / 80%);
-  grid-column: 2;
-  grid-row: 2;
+  grid-area: timeline-apple;
 }
 .timeline-stubentigercafe {
-  grid-column: 1;
-  grid-row: 3;
+  grid-area: timeline-stubentiger;
+}
+.timeline-hospitality {
+  grid-area: timeline-raste;
+}
+.timeline-apple, .timeline-hospitality, .timeline-stubentigercafe {
   text-align: center;
+  z-index: 1;
+}
+
+.Apple {
+  background-image: url(./Images/IMG_0917.webp);
+  background-position-y: 30%;
+  grid-area: apple;
 }
 .Stubentigercafe {
   background-image: url(./Images/IMG_2868.webp);
-  background-size: cover;
   background-position-y: 20%;
-  background-color: hsl(from var(--box-color) h s l / 80%);
-  grid-column: 2;
-  grid-row: 3;
-}
-.timeline-hospitality {
-  grid-column: 1;
-  grid-row: 4;
-  text-align: center;
+  grid-area: stubentiger;
 }
 .Hospitality {
+  grid-area: raste;
+}
+.Apple, .Stubentigercafe, .Hospitality {
   background-size: cover;
-  background-position-y: 60%;
   background-color: hsl(from var(--box-color) h s l / 80%);
-  grid-column: 2;
-  grid-row: 4;
+
 }
 
 /*screen sizes-------------------------------------------------------*/
 @media only screen and (max-width: 81rem) and (min-width: 50rem){
   main {
-    grid-template-columns: 9rem 1fr;
+    grid-template-columns: 7rem 1fr;
     grid-template-rows: auto;
-    gap: 1rem;
-  }
-  .Timeline {
-    grid-column: 1;
-    grid-row-start: 1;
-    grid-row-end: 6;
-  
+    grid-template-areas: 
+      "me me"
+      "skills skills"
+      "intro intro"
+      "timeline-apple apple"
+      "timeline-stubentiger stubentiger"
+      "timeline-raste raste"
+    ;
+    .Timeline {
+      grid-column: 1;
+      grid-row-start: timeline-apple-start;
+      grid-row-end: timeline-raste-end;
+    }
   }
   .Skills {
-    background-image: url(./Images/SCR-20240727-tdec.webp);
+    background-image: url(./Images/code.webp);
     background-size: cover;
     background-position-x: 20%;
-    grid-column: 2;
-    grid-row: 2;
-  }
-  
-  .Me {
-    grid-row: 1;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-auto-flow: column;
 
-  }
-  
-  .timeline-apple {
-    grid-row: 3;
-  }
-  .Apple {
-    grid-row: 3;
-  }
-  .timeline-stubentigercafe {
-    grid-row: 4;
-  }
-  .Stubentigercafe {
-    grid-row: 4;
-  }
-  .timeline-hospitality {
-    grid-row: 5;
-  }
-  .Hospitality {
-    grid-row: 5;
+    h2 {
+      grid-column-end: span 2;
+    }
   }
 }
 
@@ -128,59 +141,50 @@ main {
 @media only screen and (max-width: 50rem) {
   main {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "me"
+      "skills"
+      "intro"
+      "timeline-apple"
+      "apple"
+      "timeline-stubentiger"
+      "stubentiger"
+      "timeline-raste"
+      "raste"
+    ;
   }
+  /* html {
+    scroll-snap-type: y proximity;
+    scroll-padding: 6rem;
+  }
+  .Me, .Skills, .Intro, .timeline-stubentigercafe, .timeline-hospitality, footer {
+    scroll-snap-align: start;
+  } */
   .Timeline {
     display: none;
-  
   }
   .Skills {
-    background-image: url(./Images/SCR-20240727-tdec.webp);
+    background-image: url(./Images/code.webp);
     background-size: cover;
     background-position-x: 20%;
-    grid-column: 1;
-    grid-row: 2;
   }
-  
-  .Me {
-    grid-row: 1;
-    grid-column: 1;
-
-  }
-  
   .timeline-apple {
-    grid-row: 3;
-    grid-column: 1;
     margin: 0;
     padding: 1rem;
     background-color: hsl(from var(--box-color) h s l / 70%);
     border-radius: 1rem;
-  }
-  .Apple {
-    grid-row: 4;
-    grid-column: 1;
   }
   .timeline-stubentigercafe {
-    grid-row: 5;
-    grid-column: 1;
     margin: 0;
     padding: 1rem;
     background-color: hsl(from var(--box-color) h s l / 70%);
     border-radius: 1rem;
-  }
-  .Stubentigercafe {
-    grid-row: 6;
-    grid-column: 1;
   }
   .timeline-hospitality {
-    grid-row: 7;
-    grid-column: 1;
     margin: 0;
     padding: 1rem;
     background-color: hsl(from var(--box-color) h s l / 70%);
     border-radius: 1rem;
-  }
-  .Hospitality {
-    grid-row: 8;
-    grid-column: 1;
   }
 }
