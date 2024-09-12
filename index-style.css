@@ -86,7 +86,18 @@ main div p {
   background-image: url(./Images/IMG_0917.webp);
   background-position-y: 30%;
   grid-area: apple;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
+.Apple::before{
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(1px);
+}
+
 .Stubentigercafe {
   background-image: url(./Images/IMG_2868.webp);
   background-position-y: 20%;
@@ -98,8 +109,8 @@ main div p {
 .Apple, .Stubentigercafe, .Hospitality {
   background-size: cover;
   background-color: var(--div-background-80);
-
 }
+
 
 /*screen sizes-------------------------------------------------------*/
 @media only screen and (max-width: 81rem) and (min-width: 50rem){

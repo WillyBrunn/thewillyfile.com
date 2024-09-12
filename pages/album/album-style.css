@@ -8,9 +8,9 @@ main {
     grid-row-start: 2;
     grid-row-end: 3;
     height: 100%;
-    grid-template-rows: repeat(4, auto) 1fr; 
-}  
-main div {
+    grid-template-rows: repeat(5, auto) 1fr;
+}
+main > div {
     margin: 0;
     padding: 3rem;
     background-color: var(--div-background-70);
@@ -29,14 +29,14 @@ main div {
 .collapsible-button:hover {
     padding: .5rem;
     border-radius: 1rem;
-    background-color: var(--hover-color);
+    background-color: var(--hover-effect-color);
     cursor: pointer;
     cursor: hand;
 }
 .hover-effect {
     padding: .5rem;
     border-radius: 1rem;
-    background-color: var(--hover-color);
+    background-color: var(--hover-effect-color);
 
 }
 
@@ -49,7 +49,6 @@ main div {
 .content {
     display: none;
     height: auto;
-    background-color: transparent;
     padding: 0;
     backdrop-filter: none;
 }
@@ -59,34 +58,56 @@ main div {
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-around;
-    background-color: transparent;
     padding: 1rem;
-    backdrop-filter: none;
 }
-.photocontainer div {
+.image-box {
     padding: 0;
-    background-color: transparent;
     min-width: 25rem;
     flex: 1 1 30%;
     filter: drop-shadow(#242222 .5rem .5rem .5rem);
     z-index: 0;
-    backdrop-filter: none;
 }
-.photocontainer div img {
+.image-box img {
     max-width: 100%;
     height: auto;
 }
 
-@media only screen and (max-width: 60em){
+@media (prefers-color-scheme: dark) {
+    .Pride {
+        position: relative;
+        isolation: isolate;
+        /* overflow: hidden; */
+    }
+    .Pride .content::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        z-index: -1;
+        backdrop-filter: brightness(80%);
+        /* background: inherit;
+        filter: blur(.3rem);
+        border-radius: 1rem; */
+    }
+}
+.photo-credit {
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color: var(--hover-effect-color);
+}
+
+@media only screen and (max-width: 50em){
 
     main div {
-        padding: 1rem;
+        padding: .1rem;
+    }
+    main div h2 {
+        padding-left: 1rem;
     }
     .photocontainer {
-        padding-top: 1rem;
+        padding-top: .1rem;
     }
     .photocontainer div {
-        min-width: 10rem;
+        min-width: min(20rem, 90%);
     }
     .photocontainer div img {
         width: 100%;
