@@ -24,3 +24,14 @@ coll[i].addEventListener("click", function() {
     }
 });
 }
+
+/* language detect: ------------------------------------------------- */
+
+// var userLang = navigator.language || navigator.userLanguage;
+// var urls = {
+//     'de': '/de/index.html',
+// };
+// var defaultUrl = '/index.html';
+
+// var url = urls[userLang] ?? defaultUrl;
+// console.log(url);

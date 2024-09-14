@@ -146,9 +146,16 @@ body {
   border-radius: 1rem;
 }
 /* #endregion */
+/* #region main ------------------------------------------------------------ */
+main {
+  margin: auto 5%;
+  padding: 0;
+  grid-row: 2;
+  display: grid;
+}
+/* #endregion */
 /* #region footer ---------------------------------------------------------- */
 footer {
-  height: 5rem;
   display: grid;
   grid-template-columns: auto 1fr 13rem;
   grid-row: 3;
@@ -251,6 +258,19 @@ hr {
 }
 /* #endregion */
 /* #region screen sizes -----------------------------------------------------*/
+@media only screen and (min-width: 150rem) {
+  /* .navbar {
+    padding: 0 auto;
+  } */
+  .navbar ul {
+    width: 125rem;
+    margin: auto;
+  }
+  main {
+    margin: auto;
+    width: 125rem;
+  }
+}
 @media only screen and (max-width: 50rem) {
   .navbar ul {
     grid-template-columns: repeat(3, auto);

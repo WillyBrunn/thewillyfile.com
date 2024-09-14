@@ -1,8 +1,4 @@
 main {
-  margin: auto 5% auto 5%;
-  padding: 0;
-  grid-row: 2;
-  display: grid;
   grid-template-columns:
     [me-start intro-start timeline-start timeline-apple-start timeline-stubentiger-start timeline-raste-start]
     7rem
@@ -51,7 +47,7 @@ main div p {
 }
 
 .Me {
-  background-image: url(../../Images/me2.webp);
+  background-image: url(/Images/me2.webp);
   background-origin: content-box;
   background-size: contain;
   background-repeat: no-repeat;
@@ -83,7 +79,7 @@ main div p {
 }
 
 .Apple {
-  background-image: url(./Images/IMG_0917.webp);
+  background-image: url(/Images/IMG_0917.webp);
   background-position-y: 30%;
   grid-area: apple;
   position: relative;
@@ -99,7 +95,7 @@ main div p {
 }
 
 .Stubentigercafe {
-  background-image: url(./Images/IMG_2868.webp);
+  background-image: url(/Images/IMG_2868.webp);
   background-position-y: 20%;
   grid-area: stubentiger;
 }
@@ -132,7 +128,7 @@ main div p {
     grid-row-end: timeline-raste-end;
   }
   .Skills {
-    background-image: url(./Images/code.webp);
+    background-image: url(/Images/code.webp);
     background-size: cover;
     background-position-x: 20%;
     display: grid;
@@ -173,7 +169,7 @@ main div p {
     display: none;
   }
   .Skills {
-    background-image: url(./Images/code.webp);
+    background-image: url(/Images/code.webp);
     background-size: cover;
     background-position-x: 20%;
   }

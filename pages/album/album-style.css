@@ -1,8 +1,4 @@
 main {
-    margin: auto 5% auto 5%;
-    padding: 0;
-    grid-row: 2;
-    display: grid;
     grid-template-columns: auto;
     row-gap: 1rem;
     grid-row-start: 2;
