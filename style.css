@@ -1,4 +1,4 @@
-/* Pre and queries ------------------------------------------------- */
+/* #region Pre and queries ------------------------------------------------- */
 :root {
   max-width: 100dvw;
   margin: 0;  
@@ -12,19 +12,23 @@
   background-size: 2.1rem 2.1rem;
   background-attachment: fixed;
   background-position: 1.05rem;
-  /* credit to https://github.com/cesque/gaydient */
+  /* credit to https://github.com/cesque/gaydient -------------------- */
     --pan-pride-color: linear-gradient(to right, rgb(255, 30, 140) 10%, rgb(255, 102, 57), rgb(255, 230, 29) 40%, rgb(255, 230, 29), rgb(255, 230, 29) 60%, rgb(87, 229, 98), rgb(31, 179, 253) 85%, rgb(31, 179, 253), rgb(31, 179, 253));
     --pride-color: linear-gradient(135deg, rgb(0, 0, 0), rgb(54, 35, 18), rgb(120, 79, 23), rgb(181, 63, 27), rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 48%, rgb(241, 235, 27), rgb(241, 235, 27) 52%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
-  /* ------------------------------------------------- */
+  /* ---------------------------------------------------------------- */
+  /* ---adjusted pride color, inlcudes trans, and re-orders colors--- */
   --test-pride-color: linear-gradient(135deg, rgb(181, 63, 27), rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27), rgb(241, 235, 27), rgb(241, 235, 27), rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142) 50%, #C994C7, rgb(255, 230, 230), rgb(246, 216, 221), rgb(247, 168, 184), rgb(179, 157, 233), rgb(85, 205, 252), rgb(120, 79, 23), rgb(54, 35, 18), rgb(0, 0, 0));
-  --apple-pride-color: linear-gradient(135deg, rgb(197, 39, 36) 10%, rgb(229, 136, 73), rgb(243, 208, 49), rgb(129, 208, 167), rgb(67, 112, 195) 60%, rgb(70, 21, 101), rgb(242, 242, 242), rgb(237, 195, 207), rgb(166, 196, 246), rgb(105, 63, 50), rgb(49, 39, 42) 97%);
-  --special-color: rgb(89, 76, 142);
+  /* ---------------------------------------------------------------- */
+  /* ---purple accent colors--- */
+  --special-color: rgb(89, 76, 142); /* hsla(252, 30%, 43%, 1) */
+  --lighter-special-color: hsla(252, 30%, 70%, 1);
 } 
 
 @media (prefers-color-scheme: light) {
   html {
-    --box-color: #E7E5EB;/* hsl(from var(--theme-color) h s calc(l - 5)) */
+    --box-color: #E7E5EB; /* hsl(from var(--theme-color) h s calc(l - 5)) */
     --hover-color: #dad7e0; /* hsl(from var(--theme-color) h s calc(l - 20)) */
+    --hover-effect-color: rgba(218, 215, 224, .5);
     --div-background-70: rgba(241, 240, 242, 0.7);
     --div-background-80: rgba(241, 240, 242, 0.8);
     --theme-color: #fbfaf8;
@@ -36,11 +40,27 @@
   .github-mark-white {
     display: none;
   }
+  main > div {
+    position: relative;
+    /* isolation: isolate; */
+    overflow: hidden;
+  }
+  
+  main > div::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    z-index: -3;
+    border: solid .05rem var(--special-color);
+    filter: blur(.1rem);
+    border-radius: 1rem;  
+  }
 }
 @media (prefers-color-scheme: dark) {
   html {
     --box-color: #181616;    /* hsl(from var(--theme-color) h s calc(l - 5)) */
     --hover-color: #201e1e;    /* hsl(from var(--theme-color) h s calc(l - 2)) */
+    --hover-effect-color: rgba(32, 30, 30, .5);
     --div-background-70: rgba(24, 22, 22, 0.7);
     --div-background-80: rgba(24, 22, 22, 0.8);
     --theme-color: #242222;
@@ -54,7 +74,21 @@
   }
 }
 
-/* Body ------------------------------------------------- */
+::-webkit-scrollbar {
+  width: .5rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 100vw;
+}
+::selection {
+  background-color: var(--lighter-special-color);
+}
+/* #endregion */
+/* #region Body ------------------------------------------------------------ */
 body {
   margin: 0;
   padding: 0;
@@ -67,8 +101,8 @@ body {
   grid-template-columns: auto;
   row-gap: 1rem;
 }
-
-/* navbar ------------------------------------------------- */
+/* #endregion */
+/* #region navbar ---------------------------------------------------------- */
 .navbar {
   position: fixed;
   right: 0px;
@@ -111,12 +145,19 @@ body {
   padding: .5rem;
   border-radius: 1rem;
 }
-
-/* footer ------------------------------------------------- */
-footer {
-  height: 5rem;
+/* #endregion */
+/* #region main ------------------------------------------------------------ */
+main {
+  margin: auto 5%;
+  padding: 0;
+  grid-row: 2;
   display: grid;
-  grid-template-columns: 12rem 1fr 12rem;
+}
+/* #endregion */
+/* #region footer ---------------------------------------------------------- */
+footer {
+  display: grid;
+  grid-template-columns: auto 1fr 13rem;
   grid-row: 3;
   background-color: var(--box-color);
   padding: 1rem;
@@ -131,6 +172,32 @@ footer p {
   margin: auto;
 }
 
+.language-selector {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: grid;
+  gap: .5rem;
+}
+.language-selector h3 {
+  grid-row: 1;
+  margin: 0;
+}
+.language-selector ul {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(2, auto) 1fr;
+  padding: 0;
+  margin: 0;
+}
+.language-selector ul li {
+  list-style: none;
+  text-decoration: none;
+  margin: auto;
+}
+.language-selector ul li a {
+  font-size: 2rem;
+}
+
 .footer-center {
   grid-column: 2;
 }
@@ -138,7 +205,6 @@ footer p {
   margin: 0;
   grid-row: 1;
   grid-column: 3;
-  margin: 0;
 }
 .contact-list {
   display: grid;
@@ -161,8 +227,8 @@ footer p {
   height: 2rem;
 
 }
-
-/*text styles-------------------------------------------------------*/
+/* #endregion */
+/* #region text styles-------------------------------------------------------*/
 h1 {
   font-size: 2rem;
 }
@@ -190,9 +256,26 @@ hr {
   border: transparent;
   height: 1rem;
 }
-
-/*screen sizes-------------------------------------------------------*/
+/* #endregion */
+/* #region screen sizes -----------------------------------------------------*/
+@media only screen and (min-width: 150rem) {
+  /* .navbar {
+    padding: 0 auto;
+  } */
+  .navbar ul {
+    width: 125rem;
+    margin: auto;
+  }
+  main {
+    margin: auto;
+    width: 125rem;
+  }
+}
 @media only screen and (max-width: 50rem) {
+  .navbar ul {
+    grid-template-columns: repeat(3, auto);
+    column-gap: 1rem;
+  }
   footer {
     height: auto;
     grid-template-columns: 1fr;
@@ -210,4 +293,16 @@ hr {
     grid-column: 1;
     grid-row: 4;
   }
+  .language-selector {
+    grid-row: 5 / 7;
+  }
+  .language-selector h3 {
+    grid-row: 1;
+    text-align: center;
+  }
+  .language-selector ul {
+    grid-row: 2;
+    grid-template-columns: repeat(2, auto);
+  }
 }
+/* #endregion */
