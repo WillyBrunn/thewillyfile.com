@@ -32,6 +32,7 @@ main div {
 }
 main div p {
   padding-left: 1rem;
+  /* max-width: 76ch; */
 }
 
 .Timeline {
