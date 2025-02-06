@@ -1,0 +1,33 @@
+main {
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr;
+  row-gap: 1rem;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  height: 100%;
+}  
+main div {
+  padding: 1rem;
+  background-color: var(--div-background-70);
+  border-radius: 1rem;
+  backdrop-filter: blur(1px);
+}
+
+.content {
+  text-align: center;
+}
+
+.contact ul li {
+  list-style: none;
+  text-decoration: none;
+  margin: auto;
+  /* border: solid red 1px; */
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+
+}
+.contact ul li img {
+  max-height: 1.5rem;
+  margin-right: 1rem;
+}
