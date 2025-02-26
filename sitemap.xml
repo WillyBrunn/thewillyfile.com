@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Last updated specifies only content updates, and excludes technical updates. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<!-- EN -->
+	<url>
+		<loc>https://thewillyfile.com/</loc>
+		<link rel="canonical" href="https://thewillyfile.com/"/>
+		<priority>1.00</priority>
+		<lastmod>2025-02-25</lastmod>
+	</url>
+	<url>
+		<loc>https://thewillyfile.com/album</loc>
+		<link rel="canonical" href="https://thewillyfile.com/album"/>
+		<priority>0.80</priority>
+		<lastmod>2024-10-18</lastmod>
+	</url>
+	<url>
+		<loc>https://thewillyfile.com/about</loc>
+		<link rel="canonical" href="https://thewillyfile.com/about"/>
+		<priority>0.80</priority>
+		<lastmod>2025-02-25</lastmod>
+	</url>
+	<url>
+		<loc>https://thewillyfile.com/found</loc>
+		<link rel="canonical" href="https://thewillyfile.com/found"/>
+		<priority>0.50</priority>
+		<lastmod>2025-02-25</lastmod>
+	</url>
+	<url>
+		<loc>https://thewillyfile.com/error/error_404</loc>
+		<link rel="canonical" href="https://thewillyfile.com/error/error_404"/>
+		<priority>0.00</priority>
+		<lastmod>2024-08-01</lastmod>
+	</url>
+	<url>
+		<loc>https://thewillyfile.com/error/error_403</loc>
+		<link rel="canonical" href="https://thewillyfile.com/error/error_403"/>
+		<priority>0.00</priority>
+		<lastmod>2024-08-01</lastmod>
+	</url>
+	<!-- DE -->
+	<url>
+		<loc>https://thewillyfile.com/de/</loc>
+		<xhtml:link rel="alternate" hreflang="de" href="https://thewillyfile.com/de/"/>
+		<priority>0.80</priority>
+		<lastmod>2025-02-25</lastmod>
+	</url>
+	<url>
+		<loc>https://thewillyfile.com/de/album</loc>
+		<xhtml:link rel="alternate" hreflang="de" href="https://thewillyfile.com/de/album"/>
+		<priority>0.50</priority>
+		<lastmod>2024-10-18</lastmod>
+	</url>
+	<url>
+		<loc>https://thewillyfile.com/de/about</loc>
+		<xhtml:link rel="alternate" hreflang="de" href="https://thewillyfile.com/de/about"/>
+		<priority>0.50</priority>
+		<lastmod>2025-02-25</lastmod>
+	</url>
+	<url>
+		<loc>https://thewillyfile.com/de/error/error_404</loc>
+		<xhtml:link rel="alternate" hreflang="de" href="https://thewillyfile.com/de/error/error_404"/>
+		<priority>0.00</priority>
+		<lastmod>2024-08-01</lastmod>
+	</url>
+	<url>
+		<loc>https://thewillyfile.com/de/error/error_403</loc>
+		<xhtml:link rel="alternate" hreflang="de" href="https://thewillyfile.com/de/error/error_403"/>
+		<priority>0.00</priority>
+		<lastmod>2024-08-01</lastmod>
+	</url>
+</urlset>
