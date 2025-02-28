@@ -1,6 +1,6 @@
 main {
   grid-template-columns: auto;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto auto;
   row-gap: 1rem;
   grid-row-start: 2;
   grid-row-end: 3;
@@ -15,4 +15,15 @@ main div {
 
 .content {
   text-align: center;
+}
+
+.coffee {
+  display: grid;
+  grid-template-columns: 1fr max-content auto 1fr;
+  
+}
+.coffee p {
+  max-width: fit-content;
+  grid-column: 2;
+  align-self: center;
 }

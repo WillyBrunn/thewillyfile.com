@@ -88,6 +88,42 @@
   background-color: var(--lighter-special-color);
 }
 /* #endregion */
+/* #region text styles-------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6, p {
+  margin-block: 1rem;
+  margin-inline: 1rem;
+
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  /* text-indent: 1rem; */
+  text-wrap: pretty;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+hr {
+  border: transparent;
+  height: 1rem;
+}
+/* #endregion */
 /* #region Body ------------------------------------------------------------ */
 body {
   margin: 0;
@@ -226,35 +262,6 @@ footer p {
 .contact-list li img {
   height: 2rem;
 
-}
-/* #endregion */
-/* #region text styles-------------------------------------------------------*/
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.7rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-p {
-  font-size: 1rem;
-  /* text-indent: 1rem; */
-  text-wrap: pretty;
-}
-
-a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-hr {
-  border: transparent;
-  height: 1rem;
 }
 /* #endregion */
 /* #region screen sizes -----------------------------------------------------*/
