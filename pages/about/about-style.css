@@ -19,11 +19,13 @@ main div {
 
 .coffee {
   display: grid;
-  grid-template-columns: 1fr max-content auto 1fr;
-  
+  /* grid-template-columns: 1fr max-content auto 1fr; */
+  grid-template-columns: subgrid;
+  row-gap: 1rem;
 }
-.coffee p {
+.coffee > * {
   max-width: fit-content;
-  grid-column: 2;
-  align-self: center;
+  /* grid-column: 2; */
+  /* align-self: center; */
+  margin: auto;
 }
