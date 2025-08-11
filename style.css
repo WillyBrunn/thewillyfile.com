@@ -184,7 +184,7 @@ body {
 /* #endregion */
 /* #region main ------------------------------------------------------------ */
 main {
-  margin: auto 5%;
+  margin: 0 5% auto 5%;
   padding: 0;
   grid-row: 2;
   display: grid;
@@ -275,6 +275,7 @@ footer p {
   }
   main {
     margin: auto;
+    margin-top: 0;
     width: 125rem;
   }
 }
