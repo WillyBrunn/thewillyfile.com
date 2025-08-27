@@ -8,10 +8,10 @@
   font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, sfhello, Helvetica, Arial, san-serif;
   word-spacing: 0;
   overflow: overlay;
-  background: radial-gradient(var(--theme-color) 97%,var(--text-color) 3%);
+  /* background: radial-gradient(var(--theme-color) 97%,var(--text-color) 3%);
   background-size: 2.1rem 2.1rem;
   background-attachment: fixed;
-  background-position: 1.05rem;
+  background-position: 1.05rem; */
   /* credit to https://github.com/cesque/gaydient -------------------- */
     --pan-pride-color: linear-gradient(to right, rgb(255, 30, 140) 10%, rgb(255, 102, 57), rgb(255, 230, 29) 40%, rgb(255, 230, 29), rgb(255, 230, 29) 60%, rgb(87, 229, 98), rgb(31, 179, 253) 85%, rgb(31, 179, 253), rgb(31, 179, 253));
     --pride-color: linear-gradient(135deg, rgb(0, 0, 0), rgb(54, 35, 18), rgb(120, 79, 23), rgb(181, 63, 27), rgb(237, 34, 36), rgb(243, 91, 34), rgb(249, 150, 33), rgb(245, 193, 30), rgb(241, 235, 27) 48%, rgb(241, 235, 27), rgb(241, 235, 27) 52%, rgb(99, 199, 32), rgb(12, 155, 73), rgb(33, 135, 141), rgb(57, 84, 165), rgb(97, 55, 155), rgb(147, 40, 142));
@@ -22,7 +22,7 @@
   /* ---purple accent colors--- */
   --special-color: rgb(89, 76, 142); /* hsla(252, 30%, 43%, 1) */
   --lighter-special-color: hsla(252, 30%, 70%, 1);
-} 
+}
 
 @media (prefers-color-scheme: light) {
   html {
@@ -78,7 +78,8 @@
   width: .5rem;
 }
 ::-webkit-scrollbar-track {
-  background: var(--theme-color);
+  /* background: var(--theme-color); */
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--text-color);
@@ -125,10 +126,18 @@ hr {
 }
 /* #endregion */
 /* #region Body ------------------------------------------------------------ */
+html {
+  background-color: var(--box-color);
+}
+
 body {
   margin: 0;
   padding: 0;
   width: 100%;
+  background: radial-gradient(var(--theme-color) 97%,var(--text-color) 3%);
+  background-size: 2.1rem 2.1rem;
+  background-attachment: fixed;
+  background-position: 1.05rem;
 }
 .body-wrapper {
   min-height: 100dvh;
