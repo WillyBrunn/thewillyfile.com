@@ -1,11 +1,11 @@
 main {
   grid-template-columns:
     [me-start intro-start timeline-start timeline-apple-start timeline-stubentiger-start timeline-raste-start]
-    7rem
+    9rem
     [timeline-end timeline-apple-end timeline-stubentiger-end timeline-raste-end apple-start stubentiger-start raste-start]
     1fr
     [me-end intro-end apple-end stubentiger-end raste-end skills-start]
-    auto
+    25rem
     [skills-end]
     ;
   grid-template-rows:
@@ -30,6 +30,9 @@ main div {
   backdrop-filter: blur(1px);
   /* outline: .2rem solid hsl(from var(--box-color) h s l / 100%); */
 }
+/* main div > * {
+  margin-inline: auto;
+} */
 main div p {
   padding-left: 1rem;
   /* max-width: 76ch; */
