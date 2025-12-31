@@ -26,13 +26,25 @@
 
     <body>
         <div class="body-wrapper">
-            <nav class="navbar">
-                <ul class="navigation-wrapper-list">
+            <nav class="navbar list-navigation-wrapper">
+                <ul class="list-navigation-wrapper-content">
                     <li><a href="/index.html" class="navbar-icon"><img title="Landing Page" class="navbar-icon-img" src="/Images/me.webp"></a></li>
                     <li><a href="/about.html" class="navbar-text">About</a></li>
                     <li><a href="/album.html" class="navbar-text">Album</a></li>
                 </ul>
             </nav>
+            <!-- small screen menu button -->
+            <nav class="navbar button-navigation-wrapper">
+                <div class="button-navigation-wrapper-content">
+                    <a href="/index.html" class="navbar-icon"><img title="Landing Page" class="navbar-icon-img" src="/Images/me.webp"></a>
+                    <button class="navbar-text navigation-menu-button" onclick="menu_dropdown_function()">Menu</button>
+                </div>
+            </nav>
+
+            <ul id="navigation-menu-id" class="navigation-menu-dropdown">
+                <li><a href="/about.html" class="navbar-text">About</a></li>
+                <li><a href="/album.html" class="navbar-text">Album</a></li>
+            </ul>
 
             <main>
                 <div class="Timeline">
@@ -49,21 +61,22 @@
 
                 <div class="Skills">
                     <h2>Skills:</h2>
-                    <div>
+                    <!-- <div>
                         <h3>Current focus/ <br> work-in-progress:</h3>
                         <p>Cisco Certified Network Associate (CCNA)</p>
-                    </div>
+                    </div> -->
                     <div>
                         <h3>Tools:</h3>
                         <p>Proficient:</p>
-                        <p>Wrike, Miro, iWork apps, Office suite</p>
+                        <p>iWork apps, Office suite, Wrike, Notion, Miro, Terminal (ZSH, Bash), <br> VS Code, Ollama</p>
                         <p>Basic:</p>
                         <p>Docker, GIT, Tableau, Radar, SQL</p>
                     </div>
                     <div>
-                        <h3>Programming languages:</h3>
+                        <h3>"Programming languages":</h3>
                         <p>HTML</p>
                         <p>CSS</p>
+                        <p>Basic Bash-Scripting</p>
                     </div>
                     <div>
                         <h3>Spoken languages:</h3>
@@ -74,12 +87,12 @@
 
                 <div class="Intro"><h2>The road so far:</h2></div>
 
-                <h3 class="timeline-apple">2020 - current</h3>
+                <h3 class="timeline-apple">2020 - 2025</h3>
                 <div class="Apple">
-                    <h2>My time at Apple </h2>
+                    <h2>Apple</h2>
                     <h3>AI/ML Data Operations - Annotation Analyst</h3>
-                    <p>We strive to enhance the user experience, and improve our AI/ML products, by thinking creatively on how customers use our products and use this knowledge for improvements.</p>
-                    <p>I annotate data, utilising language and cultural knowledge, along with analytical skills, to evaluate responses and information against guidelines. Flexibility and the ability to prioritize tasks is essential.</p>
+                    <p>We worked on enhancing the user experience, and improve Apples AI/ML products, by thinking creatively on how customers use the products and use this knowledge for improvements.</p>
+                    <p>I annotated data, utilising language and cultural knowledge, along with analytical skills, to evaluate responses and information against guidelines. Flexibility and the ability to prioritize tasks was essential.</p>
 
                     <h3>Apple Care - Team Manager Apprenticeship</h3>
                     <p>I covered teams of technical support advisors during absences of their permanent manager. Duties during those coverages were mainly focused on performance management, assisting in development, presenting business communication, and generally being the point-of-contact for the team-members, but also involved time- and attendance management, and reporting on all of the above.</p>

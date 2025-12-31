@@ -21,13 +21,25 @@
 
     <body>
         <div class="body-wrapper">
-            <nav class="navbar">
-                <ul class="navigation-wrapper-list">
+            <nav class="navbar list-navigation-wrapper">
+                <ul class="list-navigation-wrapper-content">
                     <li><a href="/index.html" class="navbar-icon"><img title="Landing Page" class="navbar-icon-img" src="/Images/me.webp"></a></li>
                     <li><a href="/about.html" class="navbar-text">About</a></li>
                     <li><a href="/album.html" class="navbar-text">Album</a></li>
                 </ul>
             </nav>
+            <!-- small screen menu button -->
+            <nav class="navbar button-navigation-wrapper">
+                <div class="button-navigation-wrapper-content">
+                    <a href="/index.html" class="navbar-icon"><img title="Landing Page" class="navbar-icon-img" src="/Images/me.webp"></a>
+                    <button class="navbar-text navigation-menu-button" onclick="menu_dropdown_function()">Menu</button>
+                </div>
+            </nav>
+
+            <ul id="navigation-menu-id" class="navigation-menu-dropdown">
+                <li><a href="/about.html" class="navbar-text">About</a></li>
+                <li><a href="/album.html" class="navbar-text">Album</a></li>
+            </ul>
 
             <main>
                 <div class="content">
