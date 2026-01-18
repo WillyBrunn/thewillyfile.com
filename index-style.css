@@ -1,10 +1,10 @@
 main {
   grid-template-columns:
-    [me-start intro-start timeline-start timeline-apple-start timeline-stubentiger-start timeline-raste-start]
+    [me-start intro-start timeline-start timeline-OMS-start timeline-apple-start timeline-stubentiger-start timeline-raste-start]
     9rem
-    [timeline-end timeline-apple-end timeline-stubentiger-end timeline-raste-end apple-start stubentiger-start raste-start]
+    [timeline-end timeline-OMS-end timeline-apple-end timeline-stubentiger-end timeline-raste-end OMS-start apple-start stubentiger-start raste-start]
     1fr
-    [me-end intro-end apple-end stubentiger-end raste-end skills-start]
+    [me-end intro-end OMS-end apple-end stubentiger-end raste-end skills-start]
     25rem
     [skills-end]
     ;
@@ -13,7 +13,9 @@ main {
     auto
     [me-end intro-start]
     auto
-    [intro-end timeline-start apple-start timeline-apple-start]
+    [intro-end timeline-start OMS-start timeline-OMS-start]
+    auto
+    [OMS-end timeline-OMS-end apple-start timeline-apple-start]
     auto
     [apple-end timeline-apple-end stubentiger-start timeline-stubentiger-start]
     auto
@@ -68,6 +70,9 @@ main div p {
   margin: 0;
 }
 
+.timeline-OMS {
+  grid-area: timeline-OMS;
+}
 .timeline-apple {
   grid-area: timeline-apple;
 }
@@ -77,11 +82,14 @@ main div p {
 .timeline-hospitality {
   grid-area: timeline-raste;
 }
-.timeline-apple, .timeline-hospitality, .timeline-stubentigercafe {
+.timeline-OMS, .timeline-apple, .timeline-hospitality, .timeline-stubentigercafe {
   text-align: center;
   z-index: 1;
 }
 
+.OMS {
+  grid-area: OMS;
+}
 .Apple {
   background-image: url(/Images/IMG_0917.webp);
   background-position-y: 30%;
@@ -106,7 +114,7 @@ main div p {
 .Hospitality {
   grid-area: raste;
 }
-.Apple, .Stubentigercafe, .Hospitality {
+.OMS .Apple, .Stubentigercafe, .Hospitality {
   background-size: cover;
   background-color: var(--div-background-80);
 }
@@ -121,6 +129,7 @@ main div p {
       "me me"
       "skills skills"
       "intro intro"
+      "timeline-OMS OMS"
       "timeline-apple apple"
       "timeline-stubentiger stubentiger"
       "timeline-raste raste"
@@ -128,7 +137,7 @@ main div p {
   }
   .Timeline {
     grid-column: 1;
-    grid-row-start: timeline-apple-start;
+    grid-row-start: timeline-OMS-start;
     grid-row-end: timeline-raste-end;
   }
   .Skills {
@@ -154,6 +163,8 @@ main div p {
       "me"
       "skills"
       "intro"
+      "timeline-OMS"
+      "OMS"
       "timeline-apple"
       "apple"
       "timeline-stubentiger"
@@ -177,7 +188,7 @@ main div p {
     background-size: cover;
     background-position-x: 20%;
   }
-  .timeline-apple, .timeline-stubentigercafe, .timeline-hospitality {
+  .timeline-OMS, .timeline-apple, .timeline-stubentigercafe, .timeline-hospitality {
     margin: 0;
     padding: 1rem;
     background-color: var(--div-background-70);
