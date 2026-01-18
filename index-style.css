@@ -129,6 +129,7 @@ main div p {
       "me me"
       "skills skills"
       "intro intro"
+      "timeline-OMS OMS"
       "timeline-apple apple"
       "timeline-stubentiger stubentiger"
       "timeline-raste raste"
@@ -136,7 +137,7 @@ main div p {
   }
   .Timeline {
     grid-column: 1;
-    grid-row-start: timeline-apple-start;
+    grid-row-start: timeline-OMS-start;
     grid-row-end: timeline-raste-end;
   }
   .Skills {
@@ -162,6 +163,8 @@ main div p {
       "me"
       "skills"
       "intro"
+      "timeline-OMS"
+      "OMS"
       "timeline-apple"
       "apple"
       "timeline-stubentiger"
@@ -185,7 +188,7 @@ main div p {
     background-size: cover;
     background-position-x: 20%;
   }
-  .timeline-apple, .timeline-stubentigercafe, .timeline-hospitality {
+  .timeline-OMS, .timeline-apple, .timeline-stubentigercafe, .timeline-hospitality {
     margin: 0;
     padding: 1rem;
     background-color: var(--div-background-70);
